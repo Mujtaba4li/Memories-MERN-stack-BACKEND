@@ -30,9 +30,10 @@ app.get("/api", (req, res) => {
 // Connection with MongoDB atlas
 
 const PORT = process.env.PORT || 5000;
-
+CONNECTION_URL="mongodb://admin:admin123@cluster0-shard-00-00.2cgx1.mongodb.net:27017,cluster0-shard-00-01.2cgx1.mongodb.net:27017,cluster0-shard-00-02.2cgx1.mongodb.net:27017/MERN-Stack-App?ssl=true&replicaSet=atlas-1lvrex-shard-0&authSource=admin&retryWrites=true&w=majority";
+// CONNECTION_URL=process.env.CONNECTION_URL;
 mongoose
-  .connect(process.env.CONNECTION_URL, {
+  .connect(CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
